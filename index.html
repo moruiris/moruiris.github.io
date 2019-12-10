@@ -1,4 +1,18 @@
 <style>
+    .back {
+      position: fixed;
+      padding: 0;
+      margin: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      animation-name: backdiv;
+      animation-duration: 1s; 
+      animation-iteration-count: infinite;
+    }
+  
     .heart {
       position: absolute;
       margin: auto;
@@ -10,6 +24,9 @@
       height: 50px;
       width: 50px;
       transform: rotate(-45deg);
+      animation-name: beat;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
     }
     .heart:after {
       background-color: pink;
@@ -22,8 +39,8 @@
       left: 25px;
     }
     .heart:before {
-      content: "";
       background-color: pink;
+      content: "";
       border-radius: 50%;
       position: absolute;
       width: 50px;
@@ -31,16 +48,22 @@
       top: -25px;
       left: 0px;
     }
-    </style>
-
-<h2>CatPhotoApp</h2>
-<main>
   
-  <a href="http://freecatphotoapp.com" target="_blank">猫图</a>
+    @keyframes backdiv {
+      50% {
+        background: #ffe6f2;
+      }
+    }
   
-  <img src="http://cdn.freecodecamp.cn/relaxing-cat.jpg" alt="一只仰卧着的萌猫">
-  <p><div class = "heart"></div></p>
-  <p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>
-  <p>养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。</p>
-  <p>View more <a href="http://freecatphotoapp.com" tatget="_blank">cat photos</a></p>
-</main>
+    @keyframes beat {
+      0% {
+        transform: scale(1) rotate(-45deg);
+      }
+      50% {
+        transform: scale(0.6) rotate(-45deg);
+      }
+    }
+  
+  </style>
+  <div class="back"></div>
+  <div class="heart"></div>
