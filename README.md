@@ -1,2 +1,1 @@
 # moruiris.github.io
-hexo
